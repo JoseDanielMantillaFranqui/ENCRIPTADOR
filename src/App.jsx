@@ -1,5 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
+import { FaWhatsapp } from "react-icons/fa";
 
 const App = () => {
 
@@ -10,13 +11,12 @@ const App = () => {
 
     const handleTextoInput = (e) => {
        const textoRecibido = e.target.value;
-       const textoMinuscula = textoRecibido.toLowerCase()
-       const textoMinusculaSinAcentos = textoMinuscula.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+       const textoMinusculaSinAcentos = textoRecibido.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         setTextoInput(textoMinusculaSinAcentos)
     }
 
     const handleEncriptar = () => {
-        var textoEncriptado = textoInput.replace(/[aeiou]/g,function(encriptarLetra) {
+        var textoEncriptado = textoInput.replace(/[aeiouAEIOU]/g,function(encriptarLetra) {
 
             switch (encriptarLetra) {
     
@@ -34,6 +34,21 @@ const App = () => {
     
                 case "u" :    
                     return "ufat";
+                
+                case "A":
+                    return "Ai";
+
+                case "E":
+                    return "Enter";
+
+                case "I":
+                    return "Imes";
+
+                case "O":
+                    return "Ober";
+                
+                case "U":
+                    return "Ufat"
     
                 default:   
                    return encriptarLetra;
@@ -45,7 +60,7 @@ const App = () => {
     }
 
     const handleDesencriptar = () => {
-        var textoDesencriptado = textoInput.replace(/ai|enter|imes|ober|ufat/g,function(desencriptarLetra) {
+        var textoDesencriptado = textoInput.replace(/ai|enter|imes|ober|ufat|Ai|Enter|Imes|Ober|Ufat/g,function(desencriptarLetra) {
 
             switch (desencriptarLetra) {
     
@@ -63,7 +78,22 @@ const App = () => {
     
                 case "ufat" :   
                     return "u";
-    
+                
+                case "Ai":
+                    return "A";
+
+                case "Enter":
+                    return "E";
+
+                case "Imes":
+                    return "I";
+
+                case "Ober":
+                    return "O";
+                
+                case "Ufat":
+                    return "U"
+
                 default:    
                     return desencriptarLetra;
     
@@ -82,6 +112,11 @@ const App = () => {
         document.execCommand("copy")
         document.body.removeChild(elementoTemporal)
         setIsTextoCopiado(true)
+    }
+
+    const handleEnviarTextoOutput = () => {
+        const whatsappURL = `https://wa.me/?text=${encodeURIComponent(textoOutput)}`;
+        window.location.href = whatsappURL;
     }
 
     useEffect(() => {
@@ -106,7 +141,7 @@ const App = () => {
         </div>
         <div className="botones">
             <div className="advertencia">
-                <strong>!</strong> Sólo letras minúsculas y sin acento
+                <strong>!</strong> Sólo letras sin acento
             </div>
             <div className='encriptar-desencriptar'>
                 <button onClick={handleEncriptar} id="encriptar">Encriptar texto</button>
@@ -116,6 +151,7 @@ const App = () => {
         <div className="texto-mostrado">
             <textarea cols="16" rows="9" name="texto-mostrado" className={`texto-mostrado-output ${isEmptyTextoInput === false && 'texto-mostrado-output--hidden'}`} readOnly value={textoOutput} ></textarea>
             <button className={`copiar ${isTextoCopiado === true ? 'copiado' : '' }`} style={{display: isEmptyTextoInput === true ? 'none' : 'block'}} onClick={handleCopiarTextoOutput}>{isTextoCopiado === true ? 'COPIADO' : 'COPIAR'}</button>
+            <button className='enviar' style={{display: isEmptyTextoInput === true ? 'none' : 'flex'}} onClick={handleEnviarTextoOutput} >ENVIAR <FaWhatsapp className='icono-enviar' /></button>
         </div>
         <video id="video-fondo" autoPlay muted loop>
             <source src="background.mp4" type="video/mp4" />

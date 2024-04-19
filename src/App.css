@@ -139,7 +139,7 @@ animation: parpadeo 1s infinite step-end;
   transition: 1s all;
   margin-right: 10px;
   cursor: pointer;
-  text-shadow: 0 0 3px red;
+  text-shadow: 1px 1px 5px red;
 
 }
 
@@ -163,7 +163,7 @@ animation: parpadeo 1s infinite step-end;
   color: #c48787;
   transition: 1s all;
   cursor: pointer;
-  text-shadow: 0 0 3px red;
+  text-shadow: 1px 1px 5px red;
 }
 
 #desencriptar:hover {
@@ -190,7 +190,7 @@ animation: parpadeo 1s infinite step-end;
 .copiar {
 
   position: relative;
-  top: -100px;
+  top: -170px;
   right: -11%;
   padding: 20px 80px;
   font-size: 25px;
@@ -204,7 +204,8 @@ animation: parpadeo 1s infinite step-end;
   color: #c48787;
   transition: 0.5s all;
   cursor: pointer;
-  text-shadow: 0 0 3px red;
+  text-shadow: 1px 1px 5px red;
+  backdrop-filter: blur(5px);
 
 }
 
@@ -230,13 +231,13 @@ animation: parpadeo 1s infinite step-end;
   text-shadow: 1px 1px 5px red;
   border: none;
   border-radius: 30px;
-  padding: 30px 50px 150px;
+  padding: 30px 50px 210px;
   font-family: "Press Start 2P", system-ui;
   font-size: 20px;
   resize: none;
   outline:none;
   width: 70%;
-  height: 100%;
+  height: 75%;
   backdrop-filter: blur(5px);
 }
 
@@ -318,6 +319,41 @@ animation: parpadeo 1s infinite step-end;
     border: 2px solid #600303;
 }
 
+.enviar {
+
+    position: relative;
+    top: -150px;
+    right: -11%;
+    padding: 10px 45px;
+    font-size: 25px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 50px;
+    border: none;
+    background: #400b0ba7;
+    border: 2px solid transparent;
+    color: #c48787;
+    transition: 0.5s all;
+    cursor: pointer;
+    text-shadow: 1px 1px 5px red;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(5px);
+  }
+
+  .enviar:hover {
+
+    background: #530909b5;
+    border: 2px solid #600303;
+  }
+
+  .icono-enviar {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 5px red);
+  }
+
 @media screen and (max-width: 480px) {
 
   main {
@@ -398,7 +434,7 @@ animation: parpadeo 1s infinite step-end;
        flex-direction: column;
        align-items: center;
        justify-content: center;
-       margin-bottom: 20%;
+       margin-bottom: 25%;
 
    }
 
@@ -413,6 +449,10 @@ animation: parpadeo 1s infinite step-end;
    .copiar {
 
        right: 0;
+   }
+
+   .enviar {
+    right: 0;
    }
 
 
@@ -430,8 +470,8 @@ animation: parpadeo 1s infinite step-end;
   }
 
   .footer {
-    top: 1500px;
-    width: 101.8vw;
+    top: 1568px;
+    width: 100vw;
   }
 }
 
@@ -525,8 +565,14 @@ main {
 
    .copiar {
 
-       left: 0;
-       top: -2rem;
+       left: -22%;
+       top: -213px;
+       padding: 22px 40px;
+   }
+
+   .enviar {
+    top: -285px;
+    right: -20%;
    }
 
 
