@@ -21,34 +21,34 @@ const App = () => {
             switch (encriptarLetra) {
     
                 case "a" :   
-                    return "ai";
+                    return "si";
     
                 case "e" :   
-                    return "enter"
+                    return "knter"
     
                 case "i" :   
-                    return "imes";
+                    return "fmes";
     
                 case "o" :   
-                    return "ober";
+                    return "pber";
     
                 case "u" :    
-                    return "ufat";
+                    return "wfat";
                 
                 case "A":
-                    return "Ai";
+                    return "Si";
 
                 case "E":
-                    return "Enter";
+                    return "Knter";
 
                 case "I":
-                    return "Imes";
+                    return "Fmes";
 
                 case "O":
-                    return "Ober";
+                    return "Pber";
                 
                 case "U":
-                    return "Ufat"
+                    return "Wfat"
     
                 default:   
                    return encriptarLetra;
@@ -60,38 +60,38 @@ const App = () => {
     }
 
     const handleDesencriptar = () => {
-        var textoDesencriptado = textoInput.replace(/ai|enter|imes|ober|ufat|Ai|Enter|Imes|Ober|Ufat/g,function(desencriptarLetra) {
+        var textoDesencriptado = textoInput.replace(/si|knter|fmes|pber|wfat|Si|Knter|Fmes|Pber|Wfat/g,function(desencriptarLetra) {
 
             switch (desencriptarLetra) {
     
-                case "ai" :   
+                case "si" :   
                     return "a";
     
-                case "enter" :   
+                case "knter" :   
                     return "e"
     
-                case "imes" :   
+                case "fmes" :   
                     return "i";
     
-                case "ober" :   
+                case "pber" :   
                     return "o";
     
-                case "ufat" :   
+                case "wfat" :   
                     return "u";
                 
-                case "Ai":
+                case "Si":
                     return "A";
 
-                case "Enter":
+                case "Knter":
                     return "E";
 
-                case "Imes":
+                case "Fmes":
                     return "I";
 
-                case "Ober":
+                case "Pber":
                     return "O";
                 
-                case "Ufat":
+                case "Wfat":
                     return "U"
 
                 default:    
