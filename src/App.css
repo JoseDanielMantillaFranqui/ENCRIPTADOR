@@ -90,7 +90,7 @@ animation: parpadeo 1s infinite step-end;
 .botones {
 
   position: absolute;
-  top: 590px;
+  top: 550px;
   left: 150px;
   width: 70%;
   display: flex;
@@ -105,6 +105,8 @@ animation: parpadeo 1s infinite step-end;
   display: inline-block;
   position: relative;
   width: max-content;
+  max-width: 60%;
+  line-height: 150%;
   top: 5px;
   left: 10px;
   color: white;
@@ -404,20 +406,20 @@ animation: parpadeo 1s infinite step-end;
    .advertencia {
 
        font-size: 15px;
-       width: 90%;
+       max-width: 320px;
    }
 
    #encriptar {
 
-       margin-bottom: 15px;
-       font-size: 25px;
-       padding: 20px 64px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    padding: 20px 50px;
    }
 
    #desencriptar {
 
-       font-size: 25px;
-
+    font-size: 25px;
+    padding: 20px 15px;
    }
 
    .encriptar-desencriptar {
@@ -470,7 +472,7 @@ animation: parpadeo 1s infinite step-end;
   }
 
   .footer {
-    top: 1568px;
+    top: 1650px;
     width: 100vw;
   }
 }
@@ -590,7 +592,7 @@ main {
   }
 
   .footer {
-    top: 1386px;
+    top: 1620px;
   }
 
 }

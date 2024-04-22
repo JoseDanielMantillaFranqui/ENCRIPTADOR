@@ -12,8 +12,7 @@ const App = () => {
 
     const handleTextoInput = (e) => {
        const textoRecibido = e.target.value;
-       const textoMinusculaSinAcentos = textoRecibido.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        setTextoInput(textoMinusculaSinAcentos)
+        setTextoInput(textoRecibido)
     }
 
     const handleEncriptar = () => {
@@ -67,7 +66,7 @@ const App = () => {
         </div>
         <div className="botones">
             <div className="advertencia">
-                <strong>!</strong> Sólo letras sin acento
+                <strong>!</strong> Este encriptador acepta letras del alfabeto latino extendido junto con cualquier número.
             </div>
             <div className='encriptar-desencriptar'>
                 <button onClick={handleEncriptar} id="encriptar">Encriptar texto</button>
