@@ -1,6 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import { FaWhatsapp } from "react-icons/fa";
+import { encrypt, decrypt } from 'crypto-cesar-number-lib';
 
 const App = () => {
 
@@ -16,89 +17,14 @@ const App = () => {
     }
 
     const handleEncriptar = () => {
-        var textoEncriptado = textoInput.replace(/[aeiouAEIOU]/g,function(encriptarLetra) {
-
-            switch (encriptarLetra) {
-    
-                case "a" :   
-                    return "si";
-    
-                case "e" :   
-                    return "knter"
-    
-                case "i" :   
-                    return "fmes";
-    
-                case "o" :   
-                    return "pber";
-    
-                case "u" :    
-                    return "wfat";
-                
-                case "A":
-                    return "Si";
-
-                case "E":
-                    return "Knter";
-
-                case "I":
-                    return "Fmes";
-
-                case "O":
-                    return "Pber";
-                
-                case "U":
-                    return "Wfat"
-    
-                default:   
-                   return encriptarLetra;
-                }   
-            });
+            const textoEncriptado = encrypt(textoInput)
             textoInput.length > 0 ? setIsEmptyTextoInput(false) : setIsEmptyTextoInput(true)
             setTextoOutput(textoEncriptado)
             setTextoInput('')
     }
 
     const handleDesencriptar = () => {
-        var textoDesencriptado = textoInput.replace(/si|knter|fmes|pber|wfat|Si|Knter|Fmes|Pber|Wfat/g,function(desencriptarLetra) {
-
-            switch (desencriptarLetra) {
-    
-                case "si" :   
-                    return "a";
-    
-                case "knter" :   
-                    return "e"
-    
-                case "fmes" :   
-                    return "i";
-    
-                case "pber" :   
-                    return "o";
-    
-                case "wfat" :   
-                    return "u";
-                
-                case "Si":
-                    return "A";
-
-                case "Knter":
-                    return "E";
-
-                case "Fmes":
-                    return "I";
-
-                case "Pber":
-                    return "O";
-                
-                case "Wfat":
-                    return "U"
-
-                default:    
-                    return desencriptarLetra;
-    
-            }            
-            });
+            const textoDesencriptado = decrypt(textoInput)
             textoInput.length > 0 ? setIsEmptyTextoInput(false) : setIsEmptyTextoInput(true)
             setTextoOutput(textoDesencriptado)
             setTextoInput('')
