@@ -311,9 +311,13 @@ animation: parpadeo 1s infinite step-end;
     font-size: 1.7rem;
     border-radius: 30px;
     font-family: "Pacifico", cursive;
-    text-shadow: 0 0 3px red;
+    text-shadow: 1px 1px 3px red;
     transition: 0.5s;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .footer-logo:hover {
@@ -353,7 +357,12 @@ animation: parpadeo 1s infinite step-end;
 
   .icono-enviar {
     font-size: 3rem;
-    filter: drop-shadow(0 0 5px red);
+    filter: drop-shadow(2px 2px 3px red);
+  }
+
+  .footer-logo-icon {
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px 3px red);
   }
 
 @media screen and (max-width: 480px) {

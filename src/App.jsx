@@ -2,6 +2,7 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import { FaWhatsapp } from "react-icons/fa";
 import { encrypt, decrypt } from 'crypto-cesar-number-lib';
+import { DiCodeBadge } from "react-icons/di";
 
 const App = () => {
 
@@ -84,7 +85,7 @@ const App = () => {
     </main>
     <footer className='footer'>
         <a className='footer-logo' href='https://daniels-portafolio.vercel.app/'>
-            {'<>Daniel Franqui</>'}
+            {'Daniel Franqui'}<DiCodeBadge className='footer-logo-icon'/>
         </a>
     </footer>
 </>
